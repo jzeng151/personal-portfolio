@@ -1,0 +1,249 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #F5F0DC;
+}
+
+/* ===== HEADER ===== */
+header {
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1.5px solid #3D3470;
+    color: #3D3470;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #3D3470;
+    color: #F5F0DC;
+}
+
+nav {
+    display: flex;
+    gap: 0.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3D3470;
+    font-size: 1rem;
+    padding: 0 0.25em;
+}
+
+nav a:hover {
+    color: #8B7CC8; /* periwinkle purple — complements the light lavender header */
+}
+
+/* ===== ABOUT ===== */
+#about {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.about-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    color: #FF7D81;
+    margin-bottom: 0.75rem;
+}
+
+.about-text h4 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.about-image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ===== PROJECTS ===== */
+#projects {
+    padding: 1rem 2rem;
+}
+
+#projects h1 {
+    text-align: center;
+    color: #FF7D81;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.project-image img {
+    width: 85%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.project-text {
+    width: 50%;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.project-text h5 {
+    color: #FF7D81;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-text p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== FOOTER / CONTACT ===== */
+footer {
+    padding: 1rem 2rem;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact-text {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-text-inner {
+    width: fit-content;
+}
+
+.contact-text-inner h3 {
+    font-size: 2rem;
+    color: #2D2D2D;
+    margin-bottom: 0.5rem;
+}
+
+.contact-divider {
+    border: none;
+    border-top: 2px solid #2D2D2D;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.contact-text-inner p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 2.2;
+}
+
+.contact-social {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    padding: 4%;
+}
+
+.contact-social a {
+    display: inline-block;
+}
+
+.contact-social img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+    background-color: #1a1a2e;
+}
+
+body.dark #dark-mode-toggle {
+    border-color: #a89fd8;
+    color: #a89fd8;
+}
+
+body.dark #dark-mode-toggle:hover {
+    background-color: #a89fd8;
+    color: #1a1a2e;
+}
+
+body.dark nav a {
+    color: #a89fd8;
+}
+
+body.dark nav a:hover {
+    color: #d4cef5;
+}
+
+body.dark .about-text h4,
+body.dark .project-text p,
+body.dark .contact-text-inner p {
+    color: #aaa;
+}
+
+body.dark .contact-text-inner h3 {
+    color: #e0e0e0;
+}
+
+body.dark .contact-divider {
+    border-color: #e0e0e0;
+}
