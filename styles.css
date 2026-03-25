@@ -15,7 +15,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #F5F0DC;
+}
+
+body {
+    padding-top: 4rem;
 }
 
 #dark-mode-toggle {
@@ -50,12 +59,20 @@ nav {
 nav a {
     text-decoration: none;
     color: #3D3470;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0 0.25em;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 nav a:hover {
-    color: #8B7CC8; /* periwinkle purple — complements the light lavender header */
+    color: #8B7CC8;
+    border-bottom-color: #8B7CC8;
+}
+
+nav a.active {
+    border-bottom-color: #3D3470;
 }
 
 /* ===== ABOUT ===== */
@@ -98,6 +115,41 @@ nav a:hover {
     width: 100%;
     border-radius: 12px;
     object-fit: cover;
+}
+
+/* ===== SKILLS ===== */
+#skills {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+#skills h1 {
+    color: #FF7D81;
+    margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.skill-item span {
+    font-size: 0.85rem;
+    color: #555;
 }
 
 /* ===== PROJECTS ===== */
@@ -216,6 +268,10 @@ body.dark {
     background-color: #1a1a2e;
 }
 
+body.dark header {
+    background-color: #1a1a2e;
+}
+
 body.dark #dark-mode-toggle {
     border-color: #a89fd8;
     color: #a89fd8;
@@ -232,12 +288,24 @@ body.dark nav a {
 
 body.dark nav a:hover {
     color: #d4cef5;
+    border-bottom-color: #d4cef5;
+}
+
+body.dark nav a.active {
+    border-bottom-color: #a89fd8;
 }
 
 body.dark .about-text h4,
 body.dark .project-text p,
-body.dark .contact-text-inner p {
+body.dark .contact-text-inner p,
+body.dark .skill-item span {
     color: #aaa;
+}
+
+body.dark .skill-item img[alt="Next.js"],
+body.dark .skill-item img[alt="GitHub"],
+body.dark .skill-item img[alt="Claude Code"] {
+    filter: invert(1);
 }
 
 body.dark .contact-text-inner h3 {
