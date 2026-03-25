@@ -4,183 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/apps.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button id="dark-mode-toggle" aria-label="Toggle dark mode">&#9790;</button>
-    </header>
+    <!-- DESKTOP -->
+    <div id="desktop">
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="about">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Computer.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>About Me</span>
+            </div>
+            <div class="desktop-icon" data-app="skills">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Settings.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>Skills</span>
+            </div>
+            <div class="desktop-icon" data-app="explorer">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>My Projects</span>
+            </div>
+            <div class="desktop-icon" data-app="browser">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/InternetExplorer.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>Internet<br>Explorer</span>
+            </div>
+            <div class="desktop-icon" data-app="contact">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Mail.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>Contact Me</span>
+            </div>
+            <div class="desktop-icon" data-app="resume">
+                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Document.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <span>Resume.pdf</span>
+            </div>
+        </div>
+    </div>
 
-    <!-- MAIN CONTENT -->
-    <main>
+    <!-- TASKBAR -->
+    <div id="taskbar">
+        <button id="start-btn" class="start-button">
+            <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/WindowsClassic.png" alt="" class="start-logo" onerror="this.style.display='none'">
+            <span>Start</span>
+        </button>
+        <div class="taskbar-divider"></div>
+        <div id="taskbar-items"></div>
+        <div class="taskbar-tray">
+            <span id="taskbar-clock"></span>
+        </div>
+    </div>
 
-        <!-- ABOUT SECTION -->
-        <section id="about">
+    <!-- MOBILE GATE -->
+    <div id="mobile-gate">
+        <div class="window" style="width: 350px; margin: auto;">
+            <div class="title-bar">
+                <div class="title-bar-text">Error</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body" style="text-align: center; padding: 16px;">
+                <p style="margin-bottom: 16px;">This program requires a desktop computer to run.<br><br>Please visit on a larger screen.</p>
+                <button id="mobile-gate-ok" style="min-width: 80px;">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE FALLBACK -->
+    <section id="mobile-fallback">
+        <h1>Jason Zeng</h1>
+        <p>Passionate developer of all things cool. Building tomorrow's apps today leveraging the power of AI. I focus on best practices, optimization, human-readable code.</p>
+
+        <h2>Skills</h2>
+        <p>HTML, CSS, JavaScript, TypeScript, Python, React, Next.js, Tailwind, MongoDB, SQL, AWS, Git, GitHub, Claude Code</p>
+
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Revis</strong> — Open source monitoring tool for your Redis database</li>
+            <li><strong>Chain Reaction</strong> — Clone of the popular game show</li>
+            <li><strong>MovieFlix</strong> — Get IMDB recommendations based on your movie history</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:jason.zeng@pursuit.org">jason.zeng@pursuit.org</a></p>
+        <p>Phone: (917)-769-6017</p>
+    </section>
+
+    <!-- APP TEMPLATES -->
+
+    <!-- About Me -->
+    <template id="app-about">
+        <div class="about-content">
+            <div class="about-avatar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg" alt="Jason" class="about-avatar-img">
+            </div>
             <div class="about-text">
-                <h2>Hi there I'm Jason</h2>
-                <h4>Passionate developer of all things cool. Building tomorrow's apps today leveraging the power of AI. I focus on best practices, optimization, human-readable code. You can find me at my happiest when I'm learning, solving puzzles, listening to R&B, or visiting Japan. </h4>
+                <p><strong>Hi there, I'm Jason</strong></p>
+                <br>
+                <p>Passionate developer of all things cool. Building tomorrow's apps today leveraging the power of AI. I focus on best practices, optimization, human-readable code.</p>
+                <br>
+                <p>You can find me at my happiest when I'm learning, solving puzzles, listening to R&B, or visiting Japan.</p>
             </div>
-            <div class="about-image">
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                    alt="Rubber duck placeholder"
-                >
+        </div>
+    </template>
+
+    <!-- Skills -->
+    <template id="app-skills">
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                <span>HTML</span>
             </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section id="skills">
-            <h1 class="skills">Skills</h1>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
-                    <span>HTML</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
-                    <span>CSS</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript">
-                    <span>TypeScript</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
-                    <span>Python</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
-                    <span>React</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js">
-                    <span>Next.js</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
-                    <span>Tailwind</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                    <span>MongoDB</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL">
-                    <span>SQL</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
-                    <span>AWS</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
-                    <span>Git</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
-                    <span>GitHub</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.simpleicons.org/anthropic" alt="Claude Code">
-                    <span>Claude Code</span>
-                </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                <span>CSS</span>
             </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects">
-
-            <h1 class="projects">Projects</h1>
-
-            <div class="project">
-                <div class="project-image">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="Revis project placeholder"
-                    >
-                </div>
-                <div class="project-text">
-                    <h5>Revis</h5>
-                    <p>Open source monitoring tool for your redis database. Revis collects a robust set of data from your Redis server along with a graph visualization tracking histortical data.</p>
-                </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <span>JavaScript</span>
             </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript">
+                <span>TypeScript</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                <span>Python</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+                <span>React</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                <span>Next.js</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+                <span>Tailwind</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL">
+                <span>SQL</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
+                <span>AWS</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                <span>Git</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+                <span>GitHub</span>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.simpleicons.org/anthropic" alt="Claude Code">
+                <span>Claude Code</span>
+            </div>
+        </div>
+    </template>
 
-            <div class="project">
-                <div class="project-image">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="Chain Reaction project placeholder"
-                    >
+    <!-- Explorer -->
+    <template id="app-explorer">
+        <div class="explorer">
+            <div class="explorer-toolbar">
+                <span class="explorer-menu-item">File</span>
+                <span class="explorer-menu-item">Edit</span>
+                <span class="explorer-menu-item">View</span>
+                <span class="explorer-menu-item">Help</span>
+            </div>
+            <div class="explorer-address-bar">
+                <span class="explorer-address-label">Address</span>
+                <div class="explorer-address-field">C:\Users\Jason\Projects</div>
+            </div>
+            <div class="explorer-body">
+                <div class="explorer-folder" data-url="https://github.com">
+                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <span>Revis</span>
                 </div>
-                <div class="project-text">
-                    <h5>Chain Reaction</h5>
-                    <p>Clone of the popular game show "Chain Reaction". You've seen it on TV. You've wanted to play it yourself. Now you can!</p>
+                <div class="explorer-folder" data-url="https://github.com">
+                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <span>Chain Reaction</span>
+                </div>
+                <div class="explorer-folder" data-url="https://github.com">
+                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <span>MovieFlix</span>
                 </div>
             </div>
+        </div>
+    </template>
 
-            <div class="project">
-                <div class="project-image">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="MovieFlix project placeholder"
-                    >
-                </div>
-                <div class="project-text">
-                    <h5>MovieFlix</h5>
-                    <p>Get IMDB recommendations based on your movie history</p>
-                </div>
+    <!-- Browser (IE) -->
+    <template id="app-browser">
+        <div class="browser">
+            <div class="browser-toolbar">
+                <button class="browser-nav-btn" title="Back">&#9664;</button>
+                <button class="browser-nav-btn" title="Forward">&#9654;</button>
+                <button class="browser-nav-btn" title="Refresh">&#8635;</button>
+                <input type="text" class="browser-address" value="about:blank" placeholder="https://">
+                <button class="browser-go">Go</button>
             </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER / CONTACT -->
-    <footer>
-        <section id="contact">
-            <div class="contact-text">
-                <div class="contact-text-inner">
-                    <h3>Let's chat.</h3>
-                    <hr class="contact-divider">
-                    <p>Phone: (917)-769-6017</p>
-                    <p>Email: <strong>jason.zeng@pursuit.org</strong></p>
+            <div class="browser-viewport">
+                <iframe class="browser-iframe" src="about:blank" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+                <div class="browser-fallback" style="display: none;">
+                    <div class="browser-fallback-content">
+                        <h3>The page cannot be displayed</h3>
+                        <p>The page you are looking for cannot be displayed in this window.</p>
+                        <p><a class="browser-fallback-link" href="#" target="_blank" rel="noopener">Open in new window</a></p>
+                    </div>
                 </div>
             </div>
-            <div class="contact-social">
-                <a href="#" target="_blank">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="Twitter"
-                    >
-                </a>
-                <a href="#" target="_blank">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="LinkedIn"
-                    >
-                </a>
-                <a href="#" target="_blank">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rubber_duck_assisting_with_debugging.jpg/1200px-Rubber_duck_assisting_with_debugging.jpg"
-                        alt="GitHub"
-                    >
-                </a>
-            </div>
-        </section>
-    </footer>
+        </div>
+    </template>
 
-    <script src="script.js"></script>
+    <!-- Contact -->
+    <template id="app-contact">
+        <div class="contact-form">
+            <div class="contact-row">
+                <label>To:</label>
+                <input type="text" value="jason.zeng@pursuit.org" readonly class="contact-to">
+            </div>
+            <div class="contact-row">
+                <label>Subject:</label>
+                <input type="text" class="contact-subject" placeholder="Let's chat!">
+            </div>
+            <div class="contact-row contact-message-row">
+                <label>Message:</label>
+                <textarea class="contact-message" placeholder="Type your message..."></textarea>
+            </div>
+            <div class="contact-actions">
+                <button class="contact-send">Send</button>
+            </div>
+            <p class="contact-fallback-email">Or email directly: <a href="mailto:jason.zeng@pursuit.org">jason.zeng@pursuit.org</a></p>
+        </div>
+    </template>
+
+    <!-- Resume -->
+    <template id="app-resume">
+        <div class="resume-placeholder">
+            <div class="window" style="width: 300px; margin: 40px auto;">
+                <div class="title-bar">
+                    <div class="title-bar-text">Error</div>
+                </div>
+                <div class="window-body" style="text-align: center; padding: 16px;">
+                    <p>File not found:</p>
+                    <p><strong>C:\Users\Jason\Resume.pdf</strong></p>
+                    <br>
+                    <p style="font-size: 11px; color: #666;">Resume coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="module" src="js/desktop.js"></script>
 </body>
 </html>
