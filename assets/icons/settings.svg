@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="2" y="4" width="28" height="24" rx="1" fill="#c0c0c0" stroke="#000" stroke-width="1"/>
+  <rect x="4" y="6" width="11" height="9" fill="#fff" stroke="#808080" stroke-width="0.5"/>
+  <rect x="17" y="6" width="11" height="9" fill="#fff" stroke="#808080" stroke-width="0.5"/>
+  <rect x="4" y="17" width="11" height="9" fill="#fff" stroke="#808080" stroke-width="0.5"/>
+  <rect x="17" y="17" width="11" height="9" fill="#fff" stroke="#808080" stroke-width="0.5"/>
+  <rect x="6" y="8" width="3" height="3" fill="#000080"/>
+  <rect x="19" y="8" width="3" height="3" fill="#008080"/>
+  <rect x="6" y="19" width="3" height="3" fill="#808000"/>
+  <rect x="19" y="19" width="3" height="3" fill="#800080"/>
+  <text x="10" y="14" font-size="3" fill="#000">Display</text>
+  <text x="23" y="14" font-size="3" fill="#000">Sound</text>
+  <text x="10" y="25" font-size="3" fill="#000">Mouse</text>
+  <text x="23" y="25" font-size="3" fill="#000">System</text>
+</svg>

@@ -2,7 +2,6 @@ import WindowManager from './window-manager.js';
 import { registerAbout } from './apps/about.js';
 import { registerSkills } from './apps/skills.js';
 import { registerExplorer } from './apps/explorer.js';
-import { registerBrowser } from './apps/browser.js';
 import { registerContact } from './apps/contact.js';
 import { registerResume } from './apps/resume.js';
 
@@ -15,7 +14,6 @@ const wm = new WindowManager(desktop, taskbarItems);
 registerAbout(wm);
 registerSkills(wm);
 registerExplorer(wm);
-registerBrowser(wm);
 registerContact(wm);
 registerResume(wm);
 

@@ -14,27 +14,23 @@
     <div id="desktop">
         <div class="desktop-icons">
             <div class="desktop-icon" data-app="about">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Computer.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <img src="assets/icons/computer.svg" alt="" class="icon-img">
                 <span>About Me</span>
             </div>
             <div class="desktop-icon" data-app="skills">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Settings.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <img src="assets/icons/settings.svg" alt="" class="icon-img">
                 <span>Skills</span>
             </div>
             <div class="desktop-icon" data-app="explorer">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <img src="assets/icons/folder.svg" alt="" class="icon-img">
                 <span>My Projects</span>
             </div>
-            <div class="desktop-icon" data-app="browser">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/InternetExplorer.png" alt="" class="icon-img" onerror="this.style.display='none'">
-                <span>Internet<br>Explorer</span>
-            </div>
             <div class="desktop-icon" data-app="contact">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Mail.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <img src="assets/icons/mail.svg" alt="" class="icon-img">
                 <span>Contact Me</span>
             </div>
             <div class="desktop-icon" data-app="resume">
-                <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Document.png" alt="" class="icon-img" onerror="this.style.display='none'">
+                <img src="assets/icons/document.svg" alt="" class="icon-img">
                 <span>Resume.pdf</span>
             </div>
         </div>
@@ -43,7 +39,7 @@
     <!-- TASKBAR -->
     <div id="taskbar">
         <button id="start-btn" class="start-button">
-            <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/WindowsClassic.png" alt="" class="start-logo" onerror="this.style.display='none'">
+            <img src="assets/icons/windows.svg" alt="" class="start-logo">
             <span>Start</span>
         </button>
         <div class="taskbar-divider"></div>
@@ -184,39 +180,16 @@
             </div>
             <div class="explorer-body">
                 <div class="explorer-folder" data-url="https://github.com">
-                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>Revis</span>
                 </div>
                 <div class="explorer-folder" data-url="https://github.com">
-                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>Chain Reaction</span>
                 </div>
                 <div class="explorer-folder" data-url="https://github.com">
-                    <img src="https://cdn.jsdelivr.net/gh/nicehash/icons@latest/windows/Folder.png" alt="" class="folder-icon" onerror="this.style.display='none'">
+                    <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>MovieFlix</span>
-                </div>
-            </div>
-        </div>
-    </template>
-
-    <!-- Browser (IE) -->
-    <template id="app-browser">
-        <div class="browser">
-            <div class="browser-toolbar">
-                <button class="browser-nav-btn" title="Back">&#9664;</button>
-                <button class="browser-nav-btn" title="Forward">&#9654;</button>
-                <button class="browser-nav-btn" title="Refresh">&#8635;</button>
-                <input type="text" class="browser-address" value="about:blank" placeholder="https://">
-                <button class="browser-go">Go</button>
-            </div>
-            <div class="browser-viewport">
-                <iframe class="browser-iframe" src="about:blank" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-                <div class="browser-fallback" style="display: none;">
-                    <div class="browser-fallback-content">
-                        <h3>The page cannot be displayed</h3>
-                        <p>The page you are looking for cannot be displayed in this window.</p>
-                        <p><a class="browser-fallback-link" href="#" target="_blank" rel="noopener">Open in new window</a></p>
-                    </div>
                 </div>
             </div>
         </div>

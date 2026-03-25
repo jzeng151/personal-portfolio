@@ -6,7 +6,10 @@
       "Bash($B goto:*)",
       "Bash($B screenshot:*)",
       "Bash($B dblclick:*)",
-      "Bash($B js:*)"
+      "Bash($B js:*)",
+      "Bash(python:*)",
+      "Skill(browse)",
+      "Bash($B reload:*)"
     ]
   }
 }
