@@ -151,6 +151,19 @@
   color: #fff;
 }
 
+/* Project Iframe */
+.project-window-body {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.project-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 /* Contact Form */
 .contact-form {
   display: flex;
