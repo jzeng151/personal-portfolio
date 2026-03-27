@@ -6,13 +6,33 @@ function initContact(body) {
   const sendBtn = body.querySelector('.contact-send');
   const subjectInput = body.querySelector('.contact-subject');
   const messageInput = body.querySelector('.contact-message');
-  const email = 'jason.zeng@pursuit.org';
 
   if (sendBtn) {
     sendBtn.addEventListener('click', () => {
-      const subject = subjectInput ? encodeURIComponent(subjectInput.value) : '';
-      const message = messageInput ? encodeURIComponent(messageInput.value) : '';
-      window.location.href = `mailto:${email}?subject=${subject}&body=${message}`;
+      const subject = subjectInput ? subjectInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      if (!subject || !message) {
+        alert('Please fill in both the subject and message.');
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending...';
+
+      emailjs.send('service_q0xycwt', 'template_fiw1g9x', {
+        subject,
+        message,
+      }).then(() => {
+        sendBtn.textContent = 'Sent!';
+        if (subjectInput) subjectInput.value = '';
+        if (messageInput) messageInput.value = '';
+      }).catch((err) => {
+        console.error('EmailJS error:', err);
+        sendBtn.textContent = 'Send';
+        sendBtn.disabled = false;
+        alert('Failed to send message. Please try again or email directly.');
+      });
     });
   }
 }
