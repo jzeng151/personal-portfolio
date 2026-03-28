@@ -191,6 +191,84 @@ html, body {
 }
 
 
+/* Start Menu */
+#start-menu {
+  display: none;
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  z-index: 10000;
+  flex-direction: row;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  box-shadow: 2px 2px 0 #000;
+  background: silver;
+}
+
+#start-menu.open {
+  display: flex;
+}
+
+.start-menu-sidebar {
+  width: 28px;
+  background: #000080;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.start-menu-sidebar span {
+  color: #c0c0c0;
+  font-size: 16px;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+.start-menu-items {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.start-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: default;
+  user-select: none;
+}
+
+.start-menu-item img {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.start-menu-item:hover {
+  background: #000080;
+  color: #fff;
+}
+
+.start-menu-separator {
+  height: 1px;
+  background: #808080;
+  margin: 2px 4px;
+  border-bottom: 1px solid #fff;
+}
+
+.start-menu-shutdown {
+  margin-top: auto;
+}
+
 /* Taskbar */
 #taskbar {
   position: fixed;

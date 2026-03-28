@@ -54,6 +54,40 @@
         </div>
     </div>
 
+    <!-- START MENU -->
+    <div id="start-menu">
+        <div class="start-menu-sidebar">
+            <span>Jason</span>
+        </div>
+        <div class="start-menu-items">
+            <div class="start-menu-item" data-app="about">
+                <img src="assets/icons/computer.svg" alt="">
+                <span>About Me</span>
+            </div>
+            <div class="start-menu-item" data-app="skills">
+                <img src="assets/icons/settings.svg" alt="">
+                <span>Skills</span>
+            </div>
+            <div class="start-menu-item" data-app="explorer">
+                <img src="assets/icons/folder.svg" alt="">
+                <span>My Projects</span>
+            </div>
+            <div class="start-menu-item" data-app="contact">
+                <img src="assets/icons/mail.svg" alt="">
+                <span>Contact Me</span>
+            </div>
+            <div class="start-menu-item" data-app="resume">
+                <img src="assets/icons/document.svg" alt="">
+                <span>Resume.pdf</span>
+            </div>
+            <div class="start-menu-separator"></div>
+            <div class="start-menu-item start-menu-shutdown">
+                <img src="assets/icons/windows.svg" alt="">
+                <span>Shut Down...</span>
+            </div>
+        </div>
+    </div>
+
     <!-- TASKBAR -->
     <div id="taskbar">
         <button class="start-button">
@@ -197,7 +231,7 @@
                 <div class="explorer-address-field">C:\Users\Jason\Projects</div>
             </div>
             <div class="explorer-body">
-                <div class="explorer-folder" data-url="https://google.com">
+                <div class="explorer-folder" data-url="https://revis.dev">
                     <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>Revis</span>
                 </div>
@@ -235,22 +269,6 @@
         </div>
     </template>
 
-    <!-- Resume -->
-    <template id="app-resume">
-        <div class="resume-placeholder">
-            <div class="window" style="width: 300px; margin: 40px auto;">
-                <div class="title-bar">
-                    <div class="title-bar-text">Error</div>
-                </div>
-                <div class="window-body" style="text-align: center; padding: 16px;">
-                    <p>File not found:</p>
-                    <p><strong>C:\Users\Jason\Resume.pdf</strong></p>
-                    <br>
-                    <p style="font-size: 11px; color: #666;">Resume coming soon!</p>
-                </div>
-            </div>
-        </div>
-    </template>
 
     <script type="module" src="js/desktop.js"></script>
     <script>

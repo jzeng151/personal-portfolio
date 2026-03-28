@@ -3,6 +3,16 @@ export function registerExplorer(wm) {
 }
 
 function initExplorer(body, wm) {
+  const windowEl = body.closest('.window');
+
+  windowEl.classList.add('project-window');
+  windowEl.style.height = '340px';
+
+  body.style.flex = '1';
+  body.style.padding = '0';
+  body.style.overflow = 'hidden';
+  body.style.minHeight = '0';
+
   const folders = body.querySelectorAll('.explorer-folder');
   folders.forEach(folder => {
     folder.addEventListener('dblclick', () => {

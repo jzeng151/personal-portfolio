@@ -38,6 +38,29 @@ desktop.addEventListener('click', (e) => {
   }
 });
 
+// Start Menu
+const startBtn = document.querySelector('.start-button');
+const startMenu = document.getElementById('start-menu');
+
+startBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  startMenu.classList.toggle('open');
+  startBtn.classList.toggle('active');
+});
+
+startMenu.querySelectorAll('.start-menu-item[data-app]').forEach(item => {
+  item.addEventListener('click', () => {
+    wm.open(item.dataset.app);
+    startMenu.classList.remove('open');
+    startBtn.classList.remove('active');
+  });
+});
+
+document.addEventListener('click', () => {
+  startMenu.classList.remove('open');
+  startBtn.classList.remove('active');
+});
+
 // Clock
 const clockEl = document.getElementById('taskbar-clock');
 function updateClock() {
