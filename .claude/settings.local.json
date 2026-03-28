@@ -9,7 +9,13 @@
       "Bash($B js:*)",
       "Bash(python:*)",
       "Skill(browse)",
-      "Bash($B reload:*)"
+      "Bash($B reload:*)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(grep -E \":\\(hover|active|focus|disabled|visited\\)\" /home/steve/projects/personal-portfolio/css/*.css)",
+      "Bash(grep -E \"[.#][a-z-]*:\\(hover|active|focus|disabled|visited\\)\" /home/steve/projects/personal-portfolio/css/*.css)"
     ]
   }
 }

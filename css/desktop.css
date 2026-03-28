@@ -1,3 +1,109 @@
+/* Splash Screen */
+#splash {
+  position: fixed;
+  inset: 0;
+  /* Sky with cloud patches, matching the Win98 boot screen */
+  background:
+    radial-gradient(ellipse at 68% 35%, rgba(255,255,255,0.80) 0%, transparent 48%),
+    radial-gradient(ellipse at 20% 68%, rgba(255,255,255,0.60) 0%, transparent 36%),
+    radial-gradient(ellipse at 85% 75%, rgba(255,255,255,0.45) 0%, transparent 28%),
+    radial-gradient(ellipse at 42% 15%, rgba(255,255,255,0.35) 0%, transparent 22%),
+    linear-gradient(180deg, #60c4dc 0%, #80d2e4 30%, #b8eaf4 65%, #dff4fc 100%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo + text stacked vertically, like the reference */
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 72px;
+}
+
+/* Crop the full logo PNG to show only the flag icon (left ~18%) */
+.splash-flag-wrap {
+  overflow: hidden;
+  width: 260px;
+  height: 220px;
+  flex-shrink: 0;
+  -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+  mask-image: linear-gradient(to right, black 75%, transparent 100%);
+}
+
+.splash-flag-img {
+  display: block;
+  height: 220px;
+  width: auto;
+  max-width: none;
+}
+
+/* Text sits below the flag, indented to align with the flag (not the pixel trail) */
+.splash-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 90px;
+}
+
+/* Matches "Windows" text style from the logo */
+.splash-line1 {
+  font-family: 'Arial Black', 'Franklin Gothic Heavy', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 58px;
+  color: #111;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.18);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* Matches "98" text style */
+.splash-line2 {
+  font-family: 'Arial Black', 'Franklin Gothic Heavy', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 40px;
+  color: #111;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.18);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.splash-progress-wrap {
+  position: absolute;
+  bottom: 48px;
+  width: 300px;
+  height: 16px;
+  background: #c8c8c8;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.splash-progress {
+  height: 100%;
+  width: 0%;
+  background: repeating-linear-gradient(
+    90deg,
+    #000080 0px, #000080 10px,
+    transparent  10px, transparent 14px
+  );
+  animation: splash-fill 3s linear forwards;
+}
+
+@keyframes splash-fill {
+  to { width: 100%; }
+}
+
 /* Windows 98 Desktop */
 html, body {
   margin: 0;
@@ -84,12 +190,6 @@ html, body {
   padding: 4px;
 }
 
-.window.maximized {
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: calc(100vh - 36px) !important;
-}
 
 /* Taskbar */
 #taskbar {

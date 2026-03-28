@@ -12,6 +12,22 @@
 </head>
 <body>
 
+    <!-- SPLASH SCREEN -->
+    <div id="splash">
+        <div class="splash-content">
+            <div class="splash-flag-wrap">
+                <img src="assets/win98-logo.png" class="splash-flag-img" alt="">
+            </div>
+            <div class="splash-text">
+                <span class="splash-line1">Hi there</span>
+                <span class="splash-line2">I'm Jason</span>
+            </div>
+        </div>
+        <div class="splash-progress-wrap">
+            <div class="splash-progress"></div>
+        </div>
+    </div>
+
     <!-- DESKTOP -->
     <div id="desktop">
         <div class="desktop-icons">
@@ -40,7 +56,7 @@
 
     <!-- TASKBAR -->
     <div id="taskbar">
-        <button id="start-btn" class="start-button">
+        <button class="start-button">
             <img src="assets/icons/windows.svg" alt="" class="start-logo">
             <span>Start</span>
         </button>
@@ -185,7 +201,7 @@
                     <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>Revis</span>
                 </div>
-                <div class="explorer-folder" data-url="https://example.com">
+                <div class="explorer-folder" data-url="https://chain-reaction-clone-7vc2.vercel.app/">
                     <img src="assets/icons/folder.svg" alt="" class="folder-icon">
                     <span>Chain Reaction</span>
                 </div>
@@ -237,5 +253,13 @@
     </template>
 
     <script type="module" src="js/desktop.js"></script>
+    <script>
+      document.querySelector('.splash-progress').addEventListener('animationend', () => {
+        const splash = document.getElementById('splash');
+        splash.style.transition = 'opacity 0.7s ease';
+        splash.style.opacity = '0';
+        setTimeout(() => splash.remove(), 700);
+      });
+    </script>
 </body>
 </html>
